@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:12:42 by yufonten          #+#    #+#             */
-/*   Updated: 2023/12/14 14:36:45 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:49:19 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_putnbr(int nb, int fd)
 	{
 		nb *= -1;
 		write(fd, "-", 1);
-		ft_putnbr(nb);
+		ft_putnbr(nb, fd);
 	}
 	else if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(nb / 10, fd);
+		ft_putnbr(nb % 10, fd);
 	}
 	else
 	{
