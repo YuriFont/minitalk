@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:48:41 by yufonten          #+#    #+#             */
-/*   Updated: 2023/12/29 16:38:41 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/12/29 23:36:06 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void	ft_putnbr(int nb, int fd);
+void	ft_putnbr(int nb);
 int		ft_atoi(const char *str);
-void	ft_putstr(const char *str, int fd);
+void	ft_putstr(const char *str);
 int		ft_strlen(const char *str);
 
 #endif
