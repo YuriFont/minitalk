@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:08:46 by yufonten          #+#    #+#             */
-/*   Updated: 2023/12/30 01:43:41 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/12/30 16:42:16 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	send_bits(int pid, char c)
 	push = 0;
 	while (push < 8)
 	{
-		if ((c >> push) & 1)
+		if ((c << push) & 1000000)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
 		push++;
-		usleep(300);
+		usleep(200);
 	}
 }
 
