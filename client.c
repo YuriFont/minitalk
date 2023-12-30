@@ -6,44 +6,45 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:08:46 by yufonten          #+#    #+#             */
-/*   Updated: 2023/12/29 17:35:54 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:43:41 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	send_bits(int pid, char *str, int len)
+void	send_bits(int pid, char c)
 {
-	int	i;
 	int	push;
 
-	i = 0;
-	while (i <= len)
+	push = 0;
+	while (push < 8)
 	{
-		push = 0;
-		while (push < 8)
-		{
-			if ((str[i] >> push) & 1)
-				kill(pid, SIGUSR2);
-			else
-				kill(pid, SIGUSR1);
-			push++;
-			usleep(200);
-		}
-		i++;
+		if ((c >> push) & 1)
+			kill(pid, SIGUSR2);
+		else
+			kill(pid, SIGUSR1);
+		push++;
+		usleep(300);
 	}
 }
+
 
 int	main(int ac, char **av)
 {
 	int	pid;
+	int	i;
 
 	if (ac == 3)
 	{
+		i = 0;
 		pid = ft_atoi(av[1]);
-		send_bits(pid, av[2], ft_strlen(av[2]));
+		while (av[2][i] != '\0')
+		{
+			send_bits(pid, av[2][i]);
+			i++;
+		}
 	}
 	else
-		ft_putstr("\nWrong initialization\nTry: ./client PID Mensage\n\n", 1);
+		ft_putstr("\nWrong initialization\nTry: ./client <PID> <mensage>\n\n");
 	return (0);
 }
