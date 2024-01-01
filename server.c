@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 22:59:14 by yufonten          #+#    #+#             */
-/*   Updated: 2023/12/30 17:36:28 by yufonten         ###   ########.fr       */
+/*   Updated: 2024/01/01 18:51:06 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_header_minitalk(void)
 
 void	getting_character(int bit)
 {
-	static int		bits;
+	static int	bits;
 	static char	c;
 
 	if (bit == SIGUSR2)
