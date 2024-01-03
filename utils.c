@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:12:42 by yufonten          #+#    #+#             */
-/*   Updated: 2023/12/30 00:09:06 by yufonten         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:12:07 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,6 @@ void	ft_putstr(const char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-}
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
 }
 
 void	ft_putchar(char c)
