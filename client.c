@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:08:46 by yufonten          #+#    #+#             */
-/*   Updated: 2024/01/01 18:51:26 by yufonten         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:48:29 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	send_bits(int pid, char c)
 		else
 			kill(pid, SIGUSR1);
 		push--;
-		usleep(200);
+		usleep(500);
 	}
 }
 
